@@ -10,7 +10,7 @@ inquirer.prompt([
     },
     {
         type: 'input',
-        name: 'decription',
+        name: 'description',
         message: 'Please enter a description for your project',
       },
       {
@@ -70,7 +70,52 @@ inquirer.prompt([
     # ${data.title}
 
     ${badge}
+    (click on badge for license info)
 
+    ## Description
 
-    `
-}
+    ${data.description}
+
+    ## Table of Contents
+
+    1. [Installation](#installation)
+    2. [Usage Information]($usage)
+    3. [License](#license)
+    4. [Contribution](#contribution)
+    5. [Testing](#testing)
+    6. [Questions](#questions)
+
+    ## Installation
+
+    ${data.installation}
+
+    ## Usage
+
+    ${data.usage}
+
+    ## License
+
+    license for application: ${data.license} ${badge}
+
+    ## Contibution
+
+    ${data.contribution}
+
+    ## Testing
+
+    ${data.tests}
+
+    ## Questions
+
+    If you have any further questions about this project, please feel free to contact me on my
+    [GitHub Account](https://github.com/${data.gitHub}) or on my [email](mailto:${data.email}).
+
+    `;
+    fs.writeFile('README.md', readMe, function (err) {
+        if (err) {
+            return console.log(err);
+        }
+
+        console.log('Success, README.md Created!');
+    });
+})
