@@ -67,50 +67,48 @@ inquirer.prompt([
         var badge =  "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
     }
     const readMe = `
-    # ${data.title}
+# ${data.title}
 
-    ${badge}
-    (click on badge for license info)
+${badge}
+(click on badge for license info)
 
-    ## Description
+## Description
 
-    ${data.description}
+${data.description}
 
-    ## Table of Contents
+## Table of Contents
+1. [Installation](#installation)
+2. [Usage Information]($usage)
+3. [License](#license)
+4. [Contribution](#contribution)
+5. [Testing](#testing)
+6. [Questions](#questions)
 
-    1. [Installation](#installation)
-    2. [Usage Information]($usage)
-    3. [License](#license)
-    4. [Contribution](#contribution)
-    5. [Testing](#testing)
-    6. [Questions](#questions)
+## Installation
 
-    ## Installation
+${data.installation}
 
-    ${data.installation}
+## Usage
 
-    ## Usage
+${data.usage}
 
-    ${data.usage}
+## License
 
-    ## License
+license for application: ${data.license} ${badge}
 
-    license for application: ${data.license} ${badge}
+## Contibution
 
-    ## Contibution
+${data.contribution}
 
-    ${data.contribution}
+## Testing
 
-    ## Testing
+${data.tests}
 
-    ${data.tests}
+## Questions
 
-    ## Questions
-
-    If you have any further questions about this project, please feel free to contact me on my
-    [GitHub Account](https://github.com/${data.gitHub}) or on my [email](mailto:${data.email}).
-
-    `;
+If you have any further questions about this project, please feel free to contact me on my
+[GitHub Account](https://github.com/${data.gitHub}) or on my [email](mailto:${data.email}).
+`;
     fs.writeFile('README.md', readMe, function (err) {
         if (err) {
             return console.log(err);
